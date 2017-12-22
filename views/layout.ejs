@@ -23,12 +23,12 @@
         </li>
         <%if (showUpdate) {%>
            <li>
-             <a class="btn btn-info" href="/teams/new">Update Team</a>
+             <a class="btn btn-info update-item" href="/teams/update">Update Team</a>
            </li>
         <%}%>
         <%if (showDelete) {%>
            <li>
-             <a class="btn btn-danger" href="/teams/new">Delete Team</a>
+             <a class="btn btn-danger delete-item" href="/teams/<%=team.name%>">Delete Team</a>
            </li>
         <%}%>
       </ul>
