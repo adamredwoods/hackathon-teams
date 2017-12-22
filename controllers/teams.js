@@ -5,7 +5,7 @@ var router = express.Router();
 
 router.get('/', function(req, res) {
   var teams = teamService.allTeams();
-  res.render('teams/index', { teams: teams });
+  res.render('teams/index', { teams: teams, showDelete: false, showUpdate: false });
 });
 
 router.post('/', function(req, res) {
@@ -22,7 +22,7 @@ router.get('/:name', function(req, res) {
   // search for the team name in all the teams.
   var team = teamService.getTeam(req.params.name);
 
-  res.render('teams/show', { team: team });
+  res.render('teams/show', { team: team, showDelete: true, showUpdate: true });
 });
 
 module.exports = router;
