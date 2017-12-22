@@ -15,7 +15,7 @@ router.post('/', function(req, res) {
 });
 
 router.get('/new', function(req, res) {
-  res.render('teams/new');
+  res.render('teams/new',  {showDelete: false, showUpdate: false});
 });
 
 router.get('/:name', function(req, res) {
@@ -26,7 +26,9 @@ router.get('/:name', function(req, res) {
 });
 
 router.delete("/:name", function(req,res) {
-   console.log("delete route. ID=",req.params.name);
+   //console.log("delete route. ID=",req.params.name);
+   teamService.deleteTeam(req.params.name);
+   res.send("Success");
 });
 
 module.exports = router;

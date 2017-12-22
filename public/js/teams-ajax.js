@@ -6,7 +6,7 @@ $(document).ready(function() {
          url: $(this).attr("href"),
          method: "DELETE"
       }).success(function(data) {
-         window.location.href="/articles";
+         window.location.href="/teams";
       });
    });
 
