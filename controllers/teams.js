@@ -1,6 +1,7 @@
 var express = require('express');
 var fs = require('fs');
 var teamService = require('../models/teamService');
+// var bodyParser = require('body-parser');
 var router = express.Router();
 
 router.get('/', function(req, res) {
@@ -29,6 +30,11 @@ router.delete("/:name", function(req,res) {
    //console.log("delete route. ID=",req.params.name);
    teamService.deleteTeam(req.params.name);
    res.send("Success");
+});
+
+router.put("/:name", function(req,res) {
+   console.log("PUT route. ID=",req.params.name," ",req.body.data);
+   // res.send("Success");
 });
 
 module.exports = router;

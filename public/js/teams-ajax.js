@@ -10,4 +10,16 @@ $(document).ready(function() {
       });
    });
 
+   $(".update-form").click(function(e) {
+      e.preventDefault();
+      var dt = $(this).serialize();
+      
+      $.ajax({
+         url: $(this).attr("href"),
+         method: "PUT",
+         data: "123123"
+
+      });
+   });
+
 });

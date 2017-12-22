@@ -1,8 +1,19 @@
 <div>
-	<h2>
-	  <a href="/teams/<%= team.name %>"><%= team.name %></a>
-	</h2>
-	<p>
-	  <%= team.members %>
-  </p>
+	<% if (!showUpdate) {%>
+		<h2>
+		  <a href="/teams/<%= team.name %>"><%= team.name %></a>
+		</h2>
+		<p>
+		  <%= team.members %>
+		</p>
+  <%} else {%>
+	  <form class="update-form">
+		  <h2>
+			 <input type="text" name="teamName" value="<%= team.name %>" size=40>
+		  </h2>
+		  <p>
+			 <input type="text" name="teamMembers" value="<%= team.members %>" size=80>
+		  </p>
+	  </form>
+  <%}%>
 </div>
