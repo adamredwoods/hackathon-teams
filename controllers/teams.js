@@ -1,8 +1,9 @@
 var express = require('express');
 var fs = require('fs');
+//var bodyParser = require('body-parser');
 var teamService = require('../models/teamService');
-// var bodyParser = require('body-parser');
 var router = express.Router();
+
 
 router.get('/', function(req, res) {
   var teams = teamService.allTeams();
@@ -26,15 +27,18 @@ router.get('/:name', function(req, res) {
   res.render('teams/show', { team: team, showDelete: true, showUpdate: true });
 });
 
+router.put("/:name", function(req,res) {
+   console.log("PUT route. ID=",req.params.name," ",req.body.newName," ",req.body.newMembers);
+   teamService.editTeam(req.params.name,req.body);
+   res.send("Success");
+});
+
 router.delete("/:name", function(req,res) {
    //console.log("delete route. ID=",req.params.name);
    teamService.deleteTeam(req.params.name);
    res.send("Success");
 });
 
-router.put("/:name", function(req,res) {
-   console.log("PUT route. ID=",req.params.name," ",req.body.data);
-   // res.send("Success");
-});
+
 
 module.exports = router;

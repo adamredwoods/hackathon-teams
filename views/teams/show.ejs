@@ -7,13 +7,13 @@
 		  <%= team.members %>
 		</p>
   <%} else {%>
-	  <form class="update-form">
+	  <!-- <form class="update-form"> -->
 		  <h2>
-			 <input type="text" name="teamName" value="<%= team.name %>" size=40>
+			 <input type="text" id="teamName" value="<%= team.name %>" size=40>
 		  </h2>
 		  <p>
-			 <input type="text" name="teamMembers" value="<%= team.members %>" size=80>
+			 <input type="text" id="teamMembers" value="<%= team.members %>" size=80>
 		  </p>
-	  </form>
+	  <!-- </form> -->
   <%}%>
 </div>
